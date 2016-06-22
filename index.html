@@ -8,9 +8,11 @@
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-	<div class="bing">
-		<div class="bg_img"></div>
-		<div class="bg_mask"></div>
+	<div class="bing js_bing">
+		<div class="bg_img bg_img1 js_bg_img"></div>
+		<div class="bg_img bg_img2 js_bg_img"></div>
+		<div class="bg_img bg_img3 js_bg_img"></div>
+		<div class="bg_mask js_bg_mask"></div>
 		<header>
 			<ul class="nav">
 				<li><a href="http://cn.bing.com/images?FORM=Z9LH">图片</a></li>
@@ -20,23 +22,89 @@
 				<li><a href="http://cn.bing.com/ditu/?q=Homepage&mkt=zh&FORM=HDRSC8">地图</a></li>
 				<li><a href="http://cn.bing.com/explore?q=Homepage&FORM=HDRSC5">更多</a></li>
 				<li>丨</li>
-				<li><a href="https://www.office.com/?WT.mc_id=O16_BingHP" target="_blank">Office Online</a></li>
+				<li class="js_online">
+					<a href="https://www.office.com/?WT.mc_id=O16_BingHP" target="_blank">Office Online
+					</a>
+					<div class="office js_office">
+						<ul>
+							<li>
+								<a href="###">
+									<span class="online online-w"></span>
+									<span class="text">Word Online</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-e"></span>
+									<span class="text">Excel Online</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-ppt"></span>
+									<span class="text">PowerPoint Online</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-n"></span>
+									<span class="text">OneNote Online</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-s"></span>
+									<span class="text">Sway</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-d"></span>
+									<span class="text">Docs.com</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-o"></span>
+									<span class="text">Onedrive</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-c"></span>
+									<span class="text">Calendar</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+									<span class="online online-p"></span>
+									<span class="text">People</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
 				<li><a href="https://outlook.com/?WT.mc_id=O16_BingHP?mkt=zh-CN" target="_blank">Outlook.com</a></li>
 			</ul>
 			<div class="login">
-				<span class="swith_en">
-					<a href="http://global.bing.com/?FORM=HPCNEN&setmkt=en-us&setlang=en-us">
-						<span class="swith_logo"></span>Switch to Bing English
+				<div  class="login_b swith_en">
+					<a href="http://global.bing.com/?FORM=HPCNEN&setmkt=en-us&setlang=en-us" class="swith_logo">
+						Switch to Bing English
 					</a>
 					<span>丨</span>
-				</span>
-				<span class="user_login"><a href="###">登录<span class="user_bg"></span></a></span>
-				<span class="setting"><a href="###"></a></span>
+				</div>
+				<div class="login_b user_login"><a href="###">登录<span class="user_bg"></span></a></div>
+				<div class="login_b setting js_setting">
+					<a href="###" class="set_icon"></a>
+					<span class="set_block js_set_block">
+					<a herg="###">Search History</a><a href="###">Settings</a>
+					</span>
+				</div>
 			</div>
 		</header>
 		<div class="search">
 			<form>
-				<input type="text" name="search_input" class="search_input" />
+				<input type="text" name="search_input" class="search_input js_search_input" title="输入搜索词"/>
 				<input type="submit" class="search_submit" title="搜索" />
 			</form>
 		</div>
@@ -50,10 +118,12 @@
 					<span id="img_right" class="img_right"></span>
 				</div>
 				<div class="share">
-					<span class="share_kj"></span>
-					<span class="share_wb"></span>
-					<span class="share_wx"></span>
-					<span class="share_btn"></span>
+					<div class="share_wrap js_share_wrap">
+						<span class="share_kj"></span>
+						<span class="share_wb"></span>
+						<span class="share_wx"></span>
+					</div>
+						<span class="share_btn"></span>	
 				</div>
 			</div>
 			<ul>
