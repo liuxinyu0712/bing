@@ -24,10 +24,10 @@ a:hover{
 }
 .bing{
 	min-width: 1250px;
-	max-width: 1366px;
+	max-width: 1920px;
 	width: 100%;
 	min-height: 640px;
-	max-height: 768px;
+	max-height: 1080px;
 	height: 100%;
 	position: relative;
 }
@@ -39,6 +39,11 @@ a:hover{
 	position: absolute;
 	opacity:0;
 	filter:alpha(opacity=0);
+}
+@media (min-width: 1400px){
+	.bg_img{
+		background-position-y: 0; 
+	}
 }
 .bg_img1{
 	opacity:1;
@@ -212,8 +217,8 @@ header .login .setting .set_block a:hover{
 	height: 53px;
 	line-height: 53px;
 	position: absolute;
-	top:115px;
-	left: 109px;
+	top:20%;
+	left: 8%;
 	padding-left: 125px;
 	background: url(../images/hp_zh_cn.png) no-repeat;
 	font-size:0;
