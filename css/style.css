@@ -108,7 +108,7 @@ header .nav li .office ul li span.online{
 	width:48px;
 	height:48px;
 	margin:0 auto;
-	background-image:url(.//) no-repeat 0 0;
+	background: url(..//images/tubiao.png);
 }
 header .nav li .office ul li span.online-w{
 	background-position-x: 0;
@@ -137,7 +137,7 @@ header .nav li .office ul li span.online-c{
 header .nav li .office ul li span.online-p{
 	background-position-x: -343px;
 }
-head .nav li .office ul li a span .text{
+header .nav li .office ul li a span.text{
 	display:block;
 	font-size:12px;
 	text-align:center;
@@ -146,23 +146,22 @@ head .nav li .office ul li a span .text{
 }
 header .login{
 	width: 40%;
-	float: right;
+	float: left;
 	text-align: right;
 }
-header .login .swith_b{
+header .login .login_b{
 	display:inline-block;
 }
-header .login .swith_en{
-	height:30px;
-	padding-left:40px;
-	background:url(../) no-repeat -5px -5px;
-	vertical-align:text-top;
-}
-header .login .swith_en:hover{
-	background-position-y:-35px;
-}
 header .login .swith_en a{
-	margin: 0 13px 0 9px;
+	padding-left:30px;
+	line-height: 20px;
+	margin-right: 9px;
+	display: inline-block;
+	background:url(../images/diqiu.png) no-repeat -5px -5px;
+	vertical-align:text-bottom;
+}
+header .login .swith_en a:hover{
+	background-position-y:-35px;
 }
 header .login .user_login{
 	margin: 0 15px;
@@ -184,7 +183,7 @@ header .login .setting a.set_icon{
 	vertical-align: middle;
 	background:transparent  url(../images/hpc18.png) no-repeat -192px -148px;
 }
-header .login .setting a .set_icon:hover{
+header .login .setting a.set_icon:hover{
 	background:transparent  url(../images/hpc18.png) no-repeat -170px -148px;
 }
 header .login .setting .set_block{
@@ -203,6 +202,7 @@ header .login .setting .set_block a{
 	color:#001ba0;
 	text-align:left;
 	font-size:12px;
+	padding: 0 20px;
 }
 header .login .setting .set_block a:hover{
 	color:#092DE2;
@@ -263,13 +263,13 @@ footer .operation span:hover{
 }
 footer .operation .share{
 	width:60px;
-	height:50px;
+	height:42px;
 	float: right;
 	overflow:hidden;
 }
 footer .operation .share .share_wrap{
 	width:0;
-	height:50px;
+	height:42px;
 	display:none;
 }
 footer .operation .img{
