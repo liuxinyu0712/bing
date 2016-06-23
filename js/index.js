@@ -33,6 +33,7 @@ window.onload = function () {//页面加载时执行这个函数
  	}
  	getByClass('js_bing')[0].style.height = _height;
  	getByClass('js_bg_mask')[0].style.height = _height;
+ 	// getByClass('js_hpla')[0].style.height = bodyHeightWithScroll - 130+ 'px';
  	console.log(getByClass('js_bg_img')[0].style.height);
 
  	//鼠标移入移出online office处理事件
@@ -64,6 +65,10 @@ window.onload = function () {//页面加载时执行这个函数
  		var flag = getStyle(setBlock,'display');
  		if(flag == 'block'){
  			setBlock.style.display = 'none';
+ 		}
+ 		var sidebarRight = getStyle(sidebar,'right');
+ 		if(sidebarRight == '0px'){
+ 			sidebar.style.right = '-440px';
  		}
  	}
 
@@ -147,6 +152,22 @@ window.onload = function () {//页面加载时执行这个函数
  		} else if (curIndex> 0){
  			fadeOut(bgImg[curIndex]);
  			fadeIn(bgImg[curIndex-1]);
+ 		}
+ 	}
+
+
+ 	var sidebar = getByClass('js_sidebar')[0];
+ 	document.getElementById('news_icon').onclick = function(e){
+ 		var sidebarRight = getStyle(sidebar,'right');
+ 		if(sidebarRight == '-440px'){
+ 			sidebar.style.right = '0';
+ 		}else if(sidebarRight == '0px'){
+ 			sidebar.style.right = '-440px'
+ 		}
+ 		if (e && e.stopPropagation) {
+ 			e.stopPropagation();//w3c阻止事件冒泡
+ 		} else {
+ 			window.event.cancelBubble=true;//ie阻止事件冒泡
  		}
  	}
 };

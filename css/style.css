@@ -30,6 +30,7 @@ a:hover{
 	max-height: 1080px;
 	height: 100%;
 	position: relative;
+	overflow:hidden;
 }
 .bg_img{
 	width: 100%;
@@ -348,5 +349,65 @@ footer ul li a:hover{
 }
 footer ul li span{
 	margin: 0 10px;
+}
 
+.sidebar{
+	width:440px;
+	height:100%;
+	background-color: rgba(0,0,0,.8);
+	position: absolute;
+	right: -440px;
+	overflow-x: hidden;
+}
+.sidebar .hpla{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0 46px 0 32px;
+	max-height: 450px;
+}
+.sidebar .hpla .hpla_dl{
+	color: #fff;
+	width: 364px;
+	letter-spacing: .8px;
+	line-height: 18px;
+	position: relative;
+	top:43px;
+}
+.sidebar .hpla .hpla_dl .download{
+	margin-top: 20px;
+	text-align: right; 
+}
+.sidebar .hpla .hpla_dl .download a{
+	text-decoration: underline;
+	color:#ddd;
+}
+.sidebar .hpla .hpla_dl .download img{
+	margin-right: 5px;
+	vertical-align: bottom;
+}
+.sidebar .sights img{
+	width: 100%;
+	padding: 20px 0 40px;
+}
+.sidebar .intro h3{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+.sidebar .intro p{
+	color: #fff;
+	letter-spacing: .8px;
+	font-size: 13px;
+	line-height: 18px;
+	text-align:justify;
+}
+.sidebar .intro p.title{
+	margin-bottom: 16px;
+	color: #aaa;
+	display: block;
+}
+.sidebar .intro p.intro_text{
+	color:#aaa;
+	text-align: right;
+	margin: 8px 2px 18px 0;
 }
