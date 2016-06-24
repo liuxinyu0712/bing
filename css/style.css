@@ -4,7 +4,7 @@ body{
 	font-family: "Microsoft YaHei","微软雅黑",Helvetica,"黑体",Arial,Tahoma,"Segoe UI",Segoe,Verdana,sans-serif;
 	font-size: 13px;
 }
-body,ul,h2,h3,p,form,div,input,header,footer,image,li{
+body,ul,li,h2,h3,p,form,div,input,header,footer,image{
 	margin: 0px;
 	padding: 0px;
 	border: none;
@@ -48,7 +48,7 @@ a:hover{
 }
 .bg_img1{
 	opacity:1;
-	background-image: url(../images/SAGiraffe_ZH-CN9361468907_1920x1080.jpg);
+	background-image: url(../images/j.jpg);
 	filter:alpha(opacity=100);
 }
 .bg_img2{
@@ -66,6 +66,7 @@ a:hover{
 	filter: alpha (opacity=50);
 	display: none;
 }
+
 header{
 	box-sizing: border-box;
 	z-index: 20;
@@ -84,6 +85,9 @@ header .nav{
 header .nav li{
 	display: inline-block;
 	margin: 0 18px;
+}
+header .nav li a{
+	display: block;
 }
 header .nav li .office{
 	width:350px;
@@ -105,7 +109,6 @@ header .nav li .office ul li{
 	padding:10px;
 }
 header .nav li .office ul li a{
-	display:block;
 	width:80px;
 	height:80px;
 }
@@ -213,6 +216,7 @@ header .login .setting .set_block a{
 header .login .setting .set_block a:hover{
 	color:#092DE2;
 }
+
 .search{
 	z-index: 10;
 	height: 53px;
@@ -235,13 +239,12 @@ header .login .setting .set_block a:hover{
 	width: 45px;
 	border: 8px solid #0c8484;
 	display: inline-block;
-	margin-left: -4px;
 	background: #0c8484 url(../images/hpc18.png) no-repeat -169px -63px;
 	text-indent: -999em;
 }
+
 footer{
 	width: 100%;
-	/*height: 115px;*/
 	z-index: 10;
 	position: absolute;
 	bottom: 0;
@@ -332,7 +335,7 @@ footer .operation .share .share_wx:hover{
 footer .operation .share .share_btn:hover{
 	background-position-x: -252px;
 }
- footer ul{
+footer ul{
 	line-height: 35px;
 	padding: 0 30px;
 	background-color: #333;
@@ -363,7 +366,6 @@ footer ul li span{
 	overflow-y: scroll;
 	overflow-x: hidden;
 	padding: 0 46px 0 32px;
-	max-height: 450px;
 }
 .sidebar .hpla .hpla_dl{
 	color: #fff;

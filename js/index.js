@@ -5,7 +5,7 @@ window.onload = function () {//页面加载时执行这个函数
 		var aEle = document.getElementsByTagName('*');
 		var re = new RegExp("\\b" + sClass + "\\b","g");
 		for (var i = 0; i < aEle.length; i++) {
-			if (aEle[i].className.search(re)!= -1) {
+			if (aEle[i].className.search(re) != -1) {
 				aResult.push(aEle[i]);
 			}
 		}		
@@ -24,6 +24,14 @@ window.onload = function () {//页面加载时执行这个函数
  		return styValue;
  	}
 
+	//阻止冒泡
+	function stopBubble(e) {
+		if (e && e.stopPropagation) {
+ 			e.stopPropagation();//w3c阻止事件冒泡
+ 		} else {
+ 			window.event.cancelBubble = true;//ie阻止事件冒泡
+ 		}
+	}
  	//获取屏幕的高
  	var bodyHeightWithScroll = document.body.scrollHeight;
  	var _height = bodyHeightWithScroll + 'px';
@@ -33,7 +41,7 @@ window.onload = function () {//页面加载时执行这个函数
  	}
  	getByClass('js_bing')[0].style.height = _height;
  	getByClass('js_bg_mask')[0].style.height = _height;
- 	// getByClass('js_hpla')[0].style.height = bodyHeightWithScroll - 130+ 'px';
+ 	getByClass('js_hpla')[0].style.height = bodyHeightWithScroll - 130 + 'px';
  	console.log(getByClass('js_bg_img')[0].style.height);
 
  	//鼠标移入移出online office处理事件
@@ -55,12 +63,10 @@ window.onload = function () {//页面加载时执行这个函数
  		}else{
  			setBlock.style.display = 'none'
  		}
- 		if (e && e.stopPropagation) {
- 			e.stopPropagation();//w3c阻止事件冒泡
- 		} else {
- 			window.event.cancelBubble=true;//ie阻止事件冒泡
- 		}
+ 		stopBubble(e);
  	}
+ 	var sidebar = getByClass('js_sidebar')[0];
+ 	var sidebarWidth=getStyle(sidebar,'width').slice(0,getStyle(sidebar,'width').search('px'));
  	document.onclick=function(){
  		var flag = getStyle(setBlock,'display');
  		if(flag == 'block'){
@@ -68,10 +74,25 @@ window.onload = function () {//页面加载时执行这个函数
  		}
  		var sidebarRight = getStyle(sidebar,'right');
  		if(sidebarRight == '0px'){
- 			sidebar.style.right = '-440px';
- 		}
+ 			for (var i = 0; i <= 10; i++) {
+				(function (){
+					var _right = - sidebarWidth/10 * i;
+					setTimeout(function(){ 
+		        		sidebar.style.right = _right + 'px';
+		      		},i*25)
+				})(i);
+			}
+		}
  	}
-
+ 	//输入框获得焦点时，图片出现遮罩层
+ 	var searchInput = getByClass('js_search_input')[0];
+	var bgMask = getByClass('js_bg_mask')[0];
+	searchInput.onfocus = function(){
+		bgMask.style.display = 'block';
+	};
+	searchInput.onblur = function(){
+		bgMask.style.display = 'none';
+	};
  	//鼠标移入移出分享事件
  	var share = getByClass('js_share')[0];
  	var shareWrap = getByClass('js_share_wrap')[0];
@@ -108,7 +129,7 @@ window.onload = function () {//页面加载时执行这个函数
  		}
  	}
  	//淡出处理
- 	 	function fadeOut(elem){
+ 	function fadeOut(elem){
  		for (var i = 0; i <= 20; i++) {//透明度改变 20* 5=100
  			(function(){
  				var level = 100 - i * 5;//透明度每次变化量
@@ -155,19 +176,30 @@ window.onload = function () {//页面加载时执行这个函数
  		}
  	}
 
-
- 	var sidebar = getByClass('js_sidebar')[0];
  	document.getElementById('news_icon').onclick = function(e){
  		var sidebarRight = getStyle(sidebar,'right');
- 		if(sidebarRight == '-440px'){
- 			sidebar.style.right = '0';
- 		}else if(sidebarRight == '0px'){
- 			sidebar.style.right = '-440px'
- 		}
- 		if (e && e.stopPropagation) {
- 			e.stopPropagation();//w3c阻止事件冒泡
- 		} else {
- 			window.event.cancelBubble=true;//ie阻止事件冒泡
- 		}
+ 		if(sidebarRight == '-' + sidebarWidth + 'px'){
+			for (var i = 0; i <= 10; i++) {
+				(function (){
+					var _right = - sidebarWidth + sidebarWidth/10 * i;
+					setTimeout(function(){ 
+		        		sidebar.style.right = _right + 'px';
+		      		},i*25)
+				})(i);
+			}
+		}else if(sidebarRight == '0px'){
+			for (var i = 0; i <= 10; i++) {
+				(function (){
+					var _right = - sidebarWidth/10 * i;
+					setTimeout(function(){ 
+		        		sidebar.style.right = _right + 'px';
+		      		},i*25)
+				})(i);
+			}
+		}
+ 		stopBubble(e);
+ 	}
+ 	sidebar.onclick = function (e) {
+ 		stopBubble(e);
  	}
 };
